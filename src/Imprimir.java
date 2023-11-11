@@ -4,7 +4,7 @@
 
 public class Imprimir {
     
-    public static void imprimirTexto(String txt){
+    public static void texto(String txt){
         System.out.println(txt);
 
     }
