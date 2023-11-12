@@ -1,55 +1,72 @@
 public class Menu {
    public static void ejecutar(){
 
+    //Diseño del menú del ATM
     String opcion;
-      Imprimir.texto("Menu");
+      Imprimir.texto("*** Menu ***");
+      Imprimir.texto("");
       Imprimir.texto("1. Consultar Saldo");
       Imprimir.texto("2. Depositar");
       Imprimir.texto("3. Retirar Efectivo");
       Imprimir.texto("4. Pagar Servicios");
       Imprimir.texto("5. Transferencia");
       Imprimir.texto("6. Salir");
-      Imprimir.texto("Ingrese una opcion");
+      Imprimir.texto("");
+      Imprimir.texto("Ingrese una opcion");    
       opcion = Teclado.texto();
-     
-     
+      Continua.continuar();
+      
+      //Borrar consola
+      System.out.print("\033[H\033[2J");  
+      System.out.flush(); 
 
-  
+      
 
-      // Proceso de la estructura switch por recursión
+          
+
+      // Proceso de la estructura switch
      switch(opcion) {
       case "1":
         Cuenta.verBalance();
-        Imprimir.texto("Oprima una tecla para continuar...");
-        Teclado.texto();
-        ejecutar();
+        Continua.continuar();
+        Continua.elegir(); 
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();
         break;
 
       case "2":
         Cuenta.depositar();
-        Imprimir.texto("Oprima una tecla para continuar...");
-        Teclado.texto();
+        Continua.continuar();
+        Continua.elegir(); 
+        System.out.print("\033[H\033[2J");  
+        System.out.flush(); 
         ejecutar();
         break;
 
         case "3":
           Cuenta.retirar();
-          Imprimir.texto("Oprima una tecla para continuar...");
-          Teclado.texto();
+          Continua.continuar();
+          Continua.elegir(); 
+          System.out.print("\033[H\033[2J");  
+          System.out.flush(); 
           ejecutar();
           break;
 
         case "4":
          Cuenta.pagar();
-         Imprimir.texto("Oprima una tecla para continuar...");
-         Teclado.texto();
+         Continua.continuar();
+         Continua.elegir(); 
+         System.out.print("\033[H\033[2J");  
+         System.out.flush(); 
          ejecutar();
          break;
 
           case "5":
           Cuenta.transferir();
-          Imprimir.texto("Oprima una tecla para continuar...");
-          Teclado.texto();
+          Continua.continuar();
+          Continua.elegir(); 
+          System.out.print("\033[H\033[2J");  
+          System.out.flush(); 
           ejecutar();
           break;
 
@@ -60,6 +77,8 @@ public class Menu {
   
         default:
           Imprimir.texto("La opción ingresada es incorrecta.");
+          System.out.print("\033[H\033[2J");  
+          System.out.flush(); 
           ejecutar();
           break;
         }
