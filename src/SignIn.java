@@ -1,22 +1,23 @@
-    import java.util.Calendar;
-    import java.util.GregorianCalendar;
-    
+import java.util.Calendar;
+import java.util.GregorianCalendar;   
     public class SignIn {
-    
+        
         public static void validar() {
-            
-            
-            String pin = "1234";
-            String opcion = "";
+                       
             int intentos = 0;
             final int MAX_INTENTOS = 3;
         
             do {
-                Imprimir.texto("Ingrese su pin ");
-                opcion = Teclado.texto();
+                Imprimir.texto("Ingrese su usuario: ");
+                String usuarioIngresado = Teclado.texto(null);
+                System.out.print("Ingrese su contraseña: ");
+                String contraseñaIngresada = Teclado.texto(null);
+    
+                boolean isUserExist = Database.isUserExists(usuarioIngresado, contraseñaIngresada);
+    
                 intentos++;
                 
-                if (opcion.equals(pin)) {
+                if (isUserExist) {
                     Imprimir.texto("");
                     Calendar c1 = GregorianCalendar.getInstance();
                     Imprimir.texto("Dia y hora actual: " + c1.getTime());
@@ -27,13 +28,16 @@
                     Imprimir.texto("");
                     break;
                 } else if (intentos < MAX_INTENTOS) {
-                    Imprimir.texto("PIN incorrecto. Inténtelo de nuevo.");
+                    Imprimir.texto("Usuario o contraseña incorrectos. Inténtelo de nuevo.");
                 } else {
                     Imprimir.texto("Demasiados intentos. Inténtelo más tarde.");
                     System.exit(0); // Exit the program
                 }
                 
             } while (intentos < MAX_INTENTOS);
+        }
+
+       
         }   
         
-    }
+
