@@ -70,7 +70,7 @@ public class Menu {
           break;
 
           case "6":
-          Imprimir.texto(" ****** Gracias por su visita ****** ");
+          Imprimir.texto(" ****** Por favor, extraiga su tarjeta ****** ");
           System.exit(0);
           break;
   

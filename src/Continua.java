@@ -12,7 +12,7 @@ public class Continua {
         if (seguir.equalsIgnoreCase("si")) {
             Menu.ejecutar();
         } else
-            Imprimir.texto(" ****** Gracias por su visita ****** ");
+            Imprimir.texto(" ****** Por favor, extraiga su tarjeta ****** ");
             System.exit(0);
 
     }
