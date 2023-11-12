@@ -7,7 +7,7 @@ public class Teclado {
     public static Scanner teclado = new Scanner(System.in);
 
     //Lectura de datos tipo String(alfanumérico)
-    public static String texto(String string){
+    public static String texto(){
         return teclado.nextLine();
     }
     

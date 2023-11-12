@@ -2,7 +2,6 @@ public class Menu {
    public static void ejecutar(){
 
     //Diseño del menú del ATM
-    String opcion;
       Imprimir.texto("*** Menu ***");
       Imprimir.texto("");
       Imprimir.texto("1. Consultar Saldo");
@@ -13,7 +12,7 @@ public class Menu {
       Imprimir.texto("6. Salir");
       Imprimir.texto("");
       Imprimir.texto("Ingrese una opcion");    
-      opcion = Teclado.texto();
+      String opcion = Teclado.texto();
       Continua.continuar();
       
       //Borrar consola
@@ -24,7 +23,7 @@ public class Menu {
 
           
 
-      // Proceso de la estructura switch
+      // Proceso de la estructura switch con recursividad
      switch(opcion) {
       case "1":
         Cuenta.verBalance();

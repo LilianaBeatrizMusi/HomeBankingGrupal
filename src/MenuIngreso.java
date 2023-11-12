@@ -3,12 +3,11 @@ public class MenuIngreso {
 
     public static void printMenu() {
 
-        Teclado.texto("Bienvenido");
-
         Imprimir.texto("Elija el número de opción que corresponda");
         Imprimir.texto("1. Ingresar");
         Imprimir.texto("2. Registrarse");
-        String opcion = Teclado.texto(null);
+        String opcion = Teclado.texto();
+
 
         if (opcion.equals("1")) {
             SignIn.validar();

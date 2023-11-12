@@ -7,12 +7,12 @@ public class SignUp {
         // Procedimiento
         do {
             Imprimir.texto("Ingrese su usuario: ");
-            usuario = Teclado.texto(null);
+            usuario = Teclado.texto();
         } while (usuario.length() == 0);
 
         do {
             Imprimir.texto("Ingrese su contraseña: ");
-            contrasena = Teclado.texto(null);
+            contrasena = Teclado.texto();
         } while (contrasena.length() == 0);
 
         boolean isCreated = Database.createUser(usuario, contrasena);
@@ -23,6 +23,7 @@ public class SignUp {
             Imprimir.texto("Usuario: " + usuario);
             Imprimir.texto("Contraseña: " + contrasena);
             Imprimir.texto("***********************************");
+            MenuIngreso.printMenu();
         } else {
             Imprimir.texto("***********************************");
             Imprimir.texto("¡Error al registrar el usuario!");

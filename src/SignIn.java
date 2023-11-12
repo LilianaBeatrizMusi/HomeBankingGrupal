@@ -9,9 +9,9 @@ import java.util.GregorianCalendar;
         
             do {
                 Imprimir.texto("Ingrese su usuario: ");
-                String usuarioIngresado = Teclado.texto(null);
-                System.out.print("Ingrese su contraseña: ");
-                String contraseñaIngresada = Teclado.texto(null);
+                String usuarioIngresado = Teclado.texto();
+                Imprimir.texto("Ingrese su contraseña: ");
+                String contraseñaIngresada = Teclado.texto();
     
                 boolean isUserExist = Database.isUserExists(usuarioIngresado, contraseñaIngresada);
     
@@ -26,6 +26,7 @@ import java.util.GregorianCalendar;
                     Imprimir.texto("USTED HA INGRESADO AL CÓDIGO DESARROLLADO");
                     Imprimir.texto("POR JÓVENES PRINCIPIANTES Y FUTUROS DESARROLLADORES");
                     Imprimir.texto("");
+                    Menu.ejecutar();
                     break;
                 } else if (intentos < MAX_INTENTOS) {
                     Imprimir.texto("Usuario o contraseña incorrectos. Inténtelo de nuevo.");
