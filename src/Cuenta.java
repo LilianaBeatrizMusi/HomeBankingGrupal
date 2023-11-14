@@ -3,7 +3,7 @@ public class Cuenta {
 
   public static double patrimonio = 50000.0;
 
-  // Métodos del switch
+  // Métodos del switch del menu principal
   public static void pagarServicio() {
     Imprimir.texto("Ingrese el importe a pagar: $ ");
     double cantidad = Teclado.nbr();
@@ -52,25 +52,29 @@ public class Cuenta {
     Imprimir.texto("4. Pre-paga");
     Imprimir.texto("              ");
     Imprimir.texto("Ingrese la opcion que desea pagar y oprima ENTER");
-    // Proceso 2.1.1.1 - SWITCH para elegir opcion del menu de pago de servicios
+    // Proceso - SWITCH para elegir opcion del menu de pago de servicios
     opcion = Teclado.texto();
     switch (opcion) {
-      case "1": // SWITCH menu de pago de servicios - Opcion 1: Electricidad
+      case "1": // Opcion 1: Electricidad
         Imprimir.texto("Ustedes esta por abonar la factura de Electricidad.");
         pagarServicio();
-        break;
-      case "2": // SWITCH menu de pago de servicios - Opcion 2: Gas
+        Continua.repagar();
+        return;
+      case "2": // Opcion 2: Gas
         Imprimir.texto("Ustedes esta por abonar la factura de Gas.");
         pagarServicio();
-        break;
-      case "3": // SWITCH menu de pago de servicios - Opcion 3: Telefonia Celular
+        Continua.repagar();
+        return;
+      case "3": // Opcion 3: Telefonia Celular
         Imprimir.texto("Ustedes esta por abonar la factura de Telefonia Celular.");
         pagarServicio();
-        break;
-      case "4": // SWITCH menu de pago de servicios - Opcion 4: Pre-Paga
+        Continua.repagar();
+        return;
+      case "4": // Opcion 4: Pre-Paga
         Imprimir.texto("Ustedes esta por abonar la factura de la Pre-Paga.");
         pagarServicio();
-        break;
+        Continua.repagar();
+        return;
       default:
         Imprimir.texto("La opcion ingresada no es correcta. Intente nuevamente");
         pagar();
