@@ -59,26 +59,26 @@ public class Cuenta {
         Imprimir.texto("Ustedes esta por abonar la factura de Electricidad.");
         pagarServicio();
         Continua.repagar();
-        return;
+        break;
       case "2": // Opcion 2: Gas
         Imprimir.texto("Ustedes esta por abonar la factura de Gas.");
         pagarServicio();
         Continua.repagar();
-        return;
+        break;
       case "3": // Opcion 3: Telefonia Celular
         Imprimir.texto("Ustedes esta por abonar la factura de Telefonia Celular.");
         pagarServicio();
         Continua.repagar();
-        return;
+        break;
       case "4": // Opcion 4: Pre-Paga
         Imprimir.texto("Ustedes esta por abonar la factura de la Pre-Paga.");
         pagarServicio();
         Continua.repagar();
-        return;
+        break;
       default:
         Imprimir.texto("La opcion ingresada no es correcta. Intente nuevamente");
         pagar();
-        return;
+        break;
     }
   }
 

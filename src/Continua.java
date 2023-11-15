@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Continua {
 
     public static void continuar() {
@@ -20,12 +22,16 @@ public class Continua {
     }
 
     public static void repagar() {// Volver a pagar un servicio
-        String opcionRepago;
 
         Imprimir.texto("¿Desea realizar otro pago de servicios?");
         Imprimir.texto("1 (SI)");
         Imprimir.texto("2 (NO)");
-        opcionRepago = Teclado.texto();
+
+        // String opcionRepago = Teclado.texto();
+        Scanner scanner = new Scanner(System.in);
+        String opcionRepago = scanner.nextLine();
+        System.out.println("Usted presionó la opción: " + opcionRepago);
+        scanner.close();
 
         switch (opcionRepago) {
             case "1":
@@ -35,7 +41,7 @@ public class Continua {
                 Continua.elegir();
                 break;
             default:
-                Imprimir.texto("Opcion inexistente");
+                // Imprimir.texto("Opcion inexistente");
                 repagar();
                 break;
         }
